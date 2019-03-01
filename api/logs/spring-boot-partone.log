@@ -1,0 +1,1144 @@
+2019-02-25 00:00:57.606  INFO 24187 --- [main] c.c.travel.travel.TravelApplication      : Starting TravelApplication with PID 24187 (/home/thilan/dev-java/travel/api/build/classes/java/main started by thilan in /home/thilan/dev-java/travel/api)
+2019-02-25 00:00:57.613  INFO 24187 --- [main] c.c.travel.travel.TravelApplication      : No active profile set, falling back to default profiles: default
+2019-02-25 00:00:58.016  INFO 24187 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-02-25 00:00:58.034  INFO 24187 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13ms. Found 0 repository interfaces.
+2019-02-25 00:00:58.209  INFO 24187 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration' of type [org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration$$EnhancerBySpringCGLIB$$c96e5c14] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-02-25 00:00:58.445  INFO 24187 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-02-25 00:00:58.556  INFO 24187 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-02-25 00:01:07.532  INFO 24187 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM PUBLIC.DATABASECHANGELOGLOCK
+2019-02-25 00:01:07.546  INFO 24187 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE PUBLIC.DATABASECHANGELOGLOCK (ID INT NOT NULL, LOCKED BOOLEAN NOT NULL, LOCKGRANTED TIMESTAMP, LOCKEDBY VARCHAR(255), CONSTRAINT PK_DATABASECHANGELOGLOCK PRIMARY KEY (ID))
+2019-02-25 00:01:07.551  INFO 24187 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM PUBLIC.DATABASECHANGELOGLOCK
+2019-02-25 00:01:07.554  INFO 24187 --- [main] liquibase.executor.jvm.JdbcExecutor      : DELETE FROM PUBLIC.DATABASECHANGELOGLOCK
+2019-02-25 00:01:07.555  INFO 24187 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO PUBLIC.DATABASECHANGELOGLOCK (ID, LOCKED) VALUES (1, FALSE)
+2019-02-25 00:01:07.557  INFO 24187 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT LOCKED FROM PUBLIC.DATABASECHANGELOGLOCK WHERE ID=1
+2019-02-25 00:01:07.565  INFO 24187 --- [main] l.lockservice.StandardLockService        : Successfully acquired change log lock
+2019-02-25 00:01:08.206  INFO 24187 --- [main] l.c.StandardChangeLogHistoryService      : Creating database history table with name: PUBLIC.DATABASECHANGELOG
+2019-02-25 00:01:08.208  INFO 24187 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE PUBLIC.DATABASECHANGELOG (ID VARCHAR(255) NOT NULL, AUTHOR VARCHAR(255) NOT NULL, FILENAME VARCHAR(255) NOT NULL, DATEEXECUTED TIMESTAMP NOT NULL, ORDEREXECUTED INT NOT NULL, EXECTYPE VARCHAR(10) NOT NULL, MD5SUM VARCHAR(35), DESCRIPTION VARCHAR(255), COMMENTS VARCHAR(255), TAG VARCHAR(255), LIQUIBASE VARCHAR(20), CONTEXTS VARCHAR(255), LABELS VARCHAR(255), DEPLOYMENT_ID VARCHAR(10))
+2019-02-25 00:01:08.210  INFO 24187 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM PUBLIC.DATABASECHANGELOG
+2019-02-25 00:01:08.210  INFO 24187 --- [main] l.c.StandardChangeLogHistoryService      : Reading from PUBLIC.DATABASECHANGELOG
+2019-02-25 00:01:08.211  INFO 24187 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT * FROM PUBLIC.DATABASECHANGELOG ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2019-02-25 00:01:08.212  INFO 24187 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM PUBLIC.DATABASECHANGELOGLOCK
+2019-02-25 00:01:08.227  INFO 24187 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE PUBLIC.users (id INT AUTO_INCREMENT NOT NULL, firstname VARCHAR(50), lastname VARCHAR(50) NOT NULL, status CHAR(2), CONSTRAINT PK_USERS PRIMARY KEY (id))
+2019-02-25 00:01:08.236  INFO 24187 --- [main] liquibase.changelog.ChangeSet            : Table users created
+2019-02-25 00:01:08.236  INFO 24187 --- [main] liquibase.changelog.ChangeSet            : ChangeSet db/changelog/changes/users.yaml::1::nvoxland ran successfully in 10ms
+2019-02-25 00:01:08.237  INFO 24187 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT MAX(ORDEREXECUTED) FROM PUBLIC.DATABASECHANGELOG
+2019-02-25 00:01:08.242  INFO 24187 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1', 'nvoxland', 'db/changelog/changes/users.yaml', NOW(), 1, '8:894a611a268aaaf5b05ab55baee9fef3', 'createTable tableName=users', '', 'EXECUTED', NULL, NULL, '3.6.2', '1033068213')
+2019-02-25 00:01:08.245  INFO 24187 --- [main] l.lockservice.StandardLockService        : Successfully released change log lock
+2019-02-25 00:01:08.642  INFO 24187 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-02-25 00:01:08.888  INFO 24187 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
+2019-02-25 00:01:08.893  INFO 24187 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-02-25 00:01:09.481  INFO 24187 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-02-25 00:01:09.827  INFO 24187 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-02-25 00:01:09.994  WARN 24187 --- [main] o.h.b.i.SessionFactoryOptionsBuilder     : Unrecognized hbm2ddl_auto value : false.  Supported values include 'create', 'create-drop', 'update', 'none' and 'validate'.  Ignoring
+2019-02-25 00:01:10.105  WARN 24187 --- [main] s.c.a.AnnotationConfigApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is java.lang.IllegalArgumentException: Unrecognized legacy `hibernate.hbm2ddl.auto` value : false
+2019-02-25 00:01:10.105  INFO 24187 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-02-25 00:01:10.108  INFO 24187 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-02-25 00:01:10.117  INFO 24187 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-02-25 00:01:10.123 ERROR 24187 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is java.lang.IllegalArgumentException: Unrecognized legacy `hibernate.hbm2ddl.auto` value : false
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1745) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:576) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1083) ~[spring-context-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:853) ~[spring-context-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:546) ~[spring-context-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) [spring-boot-2.1.0.BUILD-SNAPSHOT.jar:2.1.0.BUILD-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.1.0.BUILD-SNAPSHOT.jar:2.1.0.BUILD-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) [spring-boot-2.1.0.BUILD-SNAPSHOT.jar:2.1.0.BUILD-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.0.BUILD-SNAPSHOT.jar:2.1.0.BUILD-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.0.BUILD-SNAPSHOT.jar:2.1.0.BUILD-SNAPSHOT]
+	at com.codexmo.travel.travel.TravelApplication.main(TravelApplication.java:10) [main/:na]
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is java.lang.IllegalArgumentException: Unrecognized legacy `hibernate.hbm2ddl.auto` value : false
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:402) ~[spring-orm-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:377) ~[spring-orm-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1804) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1741) ~[spring-beans-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	... 15 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Unrecognized legacy `hibernate.hbm2ddl.auto` value : false
+	at org.hibernate.tool.schema.Action.interpretHbm2ddlSetting(Action.java:181) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator$ActionGrouping.interpret(SchemaManagementToolCoordinator.java:489) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:52) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:310) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:467) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:939) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:57) ~[spring-orm-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:390) ~[spring-orm-5.1.2.RELEASE.jar:5.1.2.RELEASE]
+	... 19 common frames omitted
+
+2019-02-25 00:03:00.187  INFO 24792 --- [main] c.c.travel.travel.TravelApplication      : Starting TravelApplication with PID 24792 (/home/thilan/dev-java/travel/api/build/classes/java/main started by thilan in /home/thilan/dev-java/travel/api)
+2019-02-25 00:03:00.190  INFO 24792 --- [main] c.c.travel.travel.TravelApplication      : No active profile set, falling back to default profiles: default
+2019-02-25 00:03:00.578  INFO 24792 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-02-25 00:03:00.594  INFO 24792 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11ms. Found 0 repository interfaces.
+2019-02-25 00:03:00.767  INFO 24792 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration' of type [org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration$$EnhancerBySpringCGLIB$$c96e5c14] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-02-25 00:03:00.995  INFO 24792 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-02-25 00:03:01.107  INFO 24792 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-02-25 00:03:10.509  INFO 24792 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM PUBLIC.DATABASECHANGELOGLOCK
+2019-02-25 00:03:10.522  INFO 24792 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE PUBLIC.DATABASECHANGELOGLOCK (ID INT NOT NULL, LOCKED BOOLEAN NOT NULL, LOCKGRANTED TIMESTAMP, LOCKEDBY VARCHAR(255), CONSTRAINT PK_DATABASECHANGELOGLOCK PRIMARY KEY (ID))
+2019-02-25 00:03:10.527  INFO 24792 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM PUBLIC.DATABASECHANGELOGLOCK
+2019-02-25 00:03:10.530  INFO 24792 --- [main] liquibase.executor.jvm.JdbcExecutor      : DELETE FROM PUBLIC.DATABASECHANGELOGLOCK
+2019-02-25 00:03:10.531  INFO 24792 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO PUBLIC.DATABASECHANGELOGLOCK (ID, LOCKED) VALUES (1, FALSE)
+2019-02-25 00:03:10.533  INFO 24792 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT LOCKED FROM PUBLIC.DATABASECHANGELOGLOCK WHERE ID=1
+2019-02-25 00:03:10.540  INFO 24792 --- [main] l.lockservice.StandardLockService        : Successfully acquired change log lock
+2019-02-25 00:03:11.018  INFO 24792 --- [main] l.c.StandardChangeLogHistoryService      : Creating database history table with name: PUBLIC.DATABASECHANGELOG
+2019-02-25 00:03:11.020  INFO 24792 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE PUBLIC.DATABASECHANGELOG (ID VARCHAR(255) NOT NULL, AUTHOR VARCHAR(255) NOT NULL, FILENAME VARCHAR(255) NOT NULL, DATEEXECUTED TIMESTAMP NOT NULL, ORDEREXECUTED INT NOT NULL, EXECTYPE VARCHAR(10) NOT NULL, MD5SUM VARCHAR(35), DESCRIPTION VARCHAR(255), COMMENTS VARCHAR(255), TAG VARCHAR(255), LIQUIBASE VARCHAR(20), CONTEXTS VARCHAR(255), LABELS VARCHAR(255), DEPLOYMENT_ID VARCHAR(10))
+2019-02-25 00:03:11.022  INFO 24792 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM PUBLIC.DATABASECHANGELOG
+2019-02-25 00:03:11.022  INFO 24792 --- [main] l.c.StandardChangeLogHistoryService      : Reading from PUBLIC.DATABASECHANGELOG
+2019-02-25 00:03:11.023  INFO 24792 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT * FROM PUBLIC.DATABASECHANGELOG ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2019-02-25 00:03:11.024  INFO 24792 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM PUBLIC.DATABASECHANGELOGLOCK
+2019-02-25 00:03:11.036  INFO 24792 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE PUBLIC.users (id INT AUTO_INCREMENT NOT NULL, firstname VARCHAR(50), lastname VARCHAR(50) NOT NULL, status CHAR(2), CONSTRAINT PK_USERS PRIMARY KEY (id))
+2019-02-25 00:03:11.040  INFO 24792 --- [main] liquibase.changelog.ChangeSet            : Table users created
+2019-02-25 00:03:11.040  INFO 24792 --- [main] liquibase.changelog.ChangeSet            : ChangeSet db/changelog/changes/users.yaml::1::nvoxland ran successfully in 5ms
+2019-02-25 00:03:11.041  INFO 24792 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT MAX(ORDEREXECUTED) FROM PUBLIC.DATABASECHANGELOG
+2019-02-25 00:03:11.045  INFO 24792 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1', 'nvoxland', 'db/changelog/changes/users.yaml', NOW(), 1, '8:894a611a268aaaf5b05ab55baee9fef3', 'createTable tableName=users', '', 'EXECUTED', NULL, NULL, '3.6.2', '1033191024')
+2019-02-25 00:03:11.047  INFO 24792 --- [main] l.lockservice.StandardLockService        : Successfully released change log lock
+2019-02-25 00:03:11.165  INFO 24792 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-02-25 00:03:11.213  INFO 24792 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
+2019-02-25 00:03:11.214  INFO 24792 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-02-25 00:03:11.369  INFO 24792 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-02-25 00:03:11.470  INFO 24792 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-02-25 00:03:11.605  INFO 24792 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-02-25 00:03:12.149  INFO 24792 --- [main] c.c.travel.travel.TravelApplication      : Started TravelApplication in 52.348 seconds (JVM running for 52.648)
+2019-02-25 00:03:12.171  INFO 24792 --- [Thread-3] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-02-25 00:03:12.173  INFO 24792 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-02-25 00:03:12.175  INFO 24792 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-02-25 00:05:34.177  INFO 25304 --- [main] c.c.travel.travel.TravelApplication      : Starting TravelApplication with PID 25304 (/home/thilan/dev-java/travel/api/build/classes/java/main started by thilan in /home/thilan/dev-java/travel/api)
+2019-02-25 00:05:34.183  INFO 25304 --- [main] c.c.travel.travel.TravelApplication      : No active profile set, falling back to default profiles: default
+2019-02-25 00:05:34.676  INFO 25304 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-02-25 00:05:34.695  INFO 25304 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14ms. Found 0 repository interfaces.
+2019-02-25 00:05:34.924  INFO 25304 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration' of type [org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration$$EnhancerBySpringCGLIB$$9b203d08] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-02-25 00:05:35.207  INFO 25304 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-02-25 00:05:35.351  INFO 25304 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-02-25 00:05:44.460  INFO 25304 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM PUBLIC.DATABASECHANGELOGLOCK
+2019-02-25 00:05:44.487  INFO 25304 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE PUBLIC.DATABASECHANGELOGLOCK (ID INT NOT NULL, LOCKED BOOLEAN NOT NULL, LOCKGRANTED TIMESTAMP, LOCKEDBY VARCHAR(255), CONSTRAINT PK_DATABASECHANGELOGLOCK PRIMARY KEY (ID))
+2019-02-25 00:05:44.502  INFO 25304 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM PUBLIC.DATABASECHANGELOGLOCK
+2019-02-25 00:05:44.511  INFO 25304 --- [main] liquibase.executor.jvm.JdbcExecutor      : DELETE FROM PUBLIC.DATABASECHANGELOGLOCK
+2019-02-25 00:05:44.515  INFO 25304 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO PUBLIC.DATABASECHANGELOGLOCK (ID, LOCKED) VALUES (1, FALSE)
+2019-02-25 00:05:44.521  INFO 25304 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT LOCKED FROM PUBLIC.DATABASECHANGELOGLOCK WHERE ID=1
+2019-02-25 00:05:44.538  INFO 25304 --- [main] l.lockservice.StandardLockService        : Successfully acquired change log lock
+2019-02-25 00:05:45.579  INFO 25304 --- [main] l.c.StandardChangeLogHistoryService      : Creating database history table with name: PUBLIC.DATABASECHANGELOG
+2019-02-25 00:05:45.586  INFO 25304 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE PUBLIC.DATABASECHANGELOG (ID VARCHAR(255) NOT NULL, AUTHOR VARCHAR(255) NOT NULL, FILENAME VARCHAR(255) NOT NULL, DATEEXECUTED TIMESTAMP NOT NULL, ORDEREXECUTED INT NOT NULL, EXECTYPE VARCHAR(10) NOT NULL, MD5SUM VARCHAR(35), DESCRIPTION VARCHAR(255), COMMENTS VARCHAR(255), TAG VARCHAR(255), LIQUIBASE VARCHAR(20), CONTEXTS VARCHAR(255), LABELS VARCHAR(255), DEPLOYMENT_ID VARCHAR(10))
+2019-02-25 00:05:45.588  INFO 25304 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM PUBLIC.DATABASECHANGELOG
+2019-02-25 00:05:45.589  INFO 25304 --- [main] l.c.StandardChangeLogHistoryService      : Reading from PUBLIC.DATABASECHANGELOG
+2019-02-25 00:05:45.590  INFO 25304 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT * FROM PUBLIC.DATABASECHANGELOG ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2019-02-25 00:05:45.592  INFO 25304 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM PUBLIC.DATABASECHANGELOGLOCK
+2019-02-25 00:05:45.616  INFO 25304 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE PUBLIC.users (id INT AUTO_INCREMENT NOT NULL, firstname VARCHAR(50), lastname VARCHAR(50) NOT NULL, status CHAR(2), CONSTRAINT PK_USERS PRIMARY KEY (id))
+2019-02-25 00:05:45.626  INFO 25304 --- [main] liquibase.changelog.ChangeSet            : Table users created
+2019-02-25 00:05:45.638  INFO 25304 --- [main] liquibase.changelog.ChangeSet            : ChangeSet db/changelog/changes/users.yaml::1::nvoxland ran successfully in 24ms
+2019-02-25 00:05:45.639  INFO 25304 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT MAX(ORDEREXECUTED) FROM PUBLIC.DATABASECHANGELOG
+2019-02-25 00:05:45.650  INFO 25304 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1', 'nvoxland', 'db/changelog/changes/users.yaml', NOW(), 1, '8:894a611a268aaaf5b05ab55baee9fef3', 'createTable tableName=users', '', 'EXECUTED', NULL, NULL, '3.6.2', '1033345594')
+2019-02-25 00:05:45.656  INFO 25304 --- [main] l.lockservice.StandardLockService        : Successfully released change log lock
+2019-02-25 00:05:45.895  INFO 25304 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-02-25 00:05:46.001  INFO 25304 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
+2019-02-25 00:05:46.002  INFO 25304 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-02-25 00:05:46.286  INFO 25304 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-02-25 00:05:46.589  INFO 25304 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-02-25 00:05:46.764  INFO 25304 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-02-25 00:05:47.403  INFO 25304 --- [main] c.c.travel.travel.TravelApplication      : Started TravelApplication in 53.657 seconds (JVM running for 53.959)
+2019-02-25 00:05:47.416  INFO 25304 --- [Thread-3] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-02-25 00:05:47.419  INFO 25304 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-02-25 00:05:47.423  INFO 25304 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-02-25 00:08:23.678  INFO 26125 --- [main] c.c.travel.travel.TravelApplication      : Starting TravelApplication with PID 26125 (/home/thilan/dev-java/travel/api/build/classes/java/main started by thilan in /home/thilan/dev-java/travel/api)
+2019-02-25 00:08:23.681  INFO 26125 --- [main] c.c.travel.travel.TravelApplication      : No active profile set, falling back to default profiles: default
+2019-02-25 00:08:24.296  INFO 26125 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-02-25 00:08:24.314  INFO 26125 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12ms. Found 0 repository interfaces.
+2019-02-25 00:08:24.644  INFO 26125 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration' of type [org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration$$EnhancerBySpringCGLIB$$3793853d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-02-25 00:08:24.718  INFO 26125 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$7127c70f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-02-25 00:08:25.068  INFO 26125 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2019-02-25 00:08:25.090  INFO 26125 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-02-25 00:08:25.091  INFO 26125 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-02-25 00:08:25.101  INFO 26125 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+2019-02-25 00:08:25.189  INFO 26125 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-02-25 00:08:25.189  INFO 26125 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1476 ms
+2019-02-25 00:08:25.247  INFO 26125 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-02-25 00:08:25.248  INFO 26125 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-02-25 00:08:25.248  INFO 26125 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'formContentFilter' to: [/*]
+2019-02-25 00:08:25.248  INFO 26125 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-02-25 00:08:25.249  INFO 26125 --- [main] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-02-25 00:08:25.249  INFO 26125 --- [main] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-02-25 00:08:25.251  INFO 26125 --- [main] o.s.b.w.servlet.ServletRegistrationBean  : Servlet webServlet mapped to [/h2-console/*]
+2019-02-25 00:08:25.422  INFO 26125 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-02-25 00:08:25.540  INFO 26125 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-02-25 00:08:34.427  INFO 26125 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM PUBLIC.DATABASECHANGELOGLOCK
+2019-02-25 00:08:34.437  INFO 26125 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE PUBLIC.DATABASECHANGELOGLOCK (ID INT NOT NULL, LOCKED BOOLEAN NOT NULL, LOCKGRANTED TIMESTAMP, LOCKEDBY VARCHAR(255), CONSTRAINT PK_DATABASECHANGELOGLOCK PRIMARY KEY (ID))
+2019-02-25 00:08:34.442  INFO 26125 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM PUBLIC.DATABASECHANGELOGLOCK
+2019-02-25 00:08:34.444  INFO 26125 --- [main] liquibase.executor.jvm.JdbcExecutor      : DELETE FROM PUBLIC.DATABASECHANGELOGLOCK
+2019-02-25 00:08:34.445  INFO 26125 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO PUBLIC.DATABASECHANGELOGLOCK (ID, LOCKED) VALUES (1, FALSE)
+2019-02-25 00:08:34.448  INFO 26125 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT LOCKED FROM PUBLIC.DATABASECHANGELOGLOCK WHERE ID=1
+2019-02-25 00:08:34.459  INFO 26125 --- [main] l.lockservice.StandardLockService        : Successfully acquired change log lock
+2019-02-25 00:08:35.068  INFO 26125 --- [main] l.c.StandardChangeLogHistoryService      : Creating database history table with name: PUBLIC.DATABASECHANGELOG
+2019-02-25 00:08:35.073  INFO 26125 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE PUBLIC.DATABASECHANGELOG (ID VARCHAR(255) NOT NULL, AUTHOR VARCHAR(255) NOT NULL, FILENAME VARCHAR(255) NOT NULL, DATEEXECUTED TIMESTAMP NOT NULL, ORDEREXECUTED INT NOT NULL, EXECTYPE VARCHAR(10) NOT NULL, MD5SUM VARCHAR(35), DESCRIPTION VARCHAR(255), COMMENTS VARCHAR(255), TAG VARCHAR(255), LIQUIBASE VARCHAR(20), CONTEXTS VARCHAR(255), LABELS VARCHAR(255), DEPLOYMENT_ID VARCHAR(10))
+2019-02-25 00:08:35.075  INFO 26125 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM PUBLIC.DATABASECHANGELOG
+2019-02-25 00:08:35.075  INFO 26125 --- [main] l.c.StandardChangeLogHistoryService      : Reading from PUBLIC.DATABASECHANGELOG
+2019-02-25 00:08:35.077  INFO 26125 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT * FROM PUBLIC.DATABASECHANGELOG ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2019-02-25 00:08:35.078  INFO 26125 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM PUBLIC.DATABASECHANGELOGLOCK
+2019-02-25 00:08:35.094  INFO 26125 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE PUBLIC.users (id INT AUTO_INCREMENT NOT NULL, firstname VARCHAR(50), lastname VARCHAR(50) NOT NULL, status CHAR(2), CONSTRAINT PK_USERS PRIMARY KEY (id))
+2019-02-25 00:08:35.110  INFO 26125 --- [main] liquibase.changelog.ChangeSet            : Table users created
+2019-02-25 00:08:35.117  INFO 26125 --- [main] liquibase.changelog.ChangeSet            : ChangeSet db/changelog/changes/users.yaml::1::nvoxland ran successfully in 23ms
+2019-02-25 00:08:35.118  INFO 26125 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT MAX(ORDEREXECUTED) FROM PUBLIC.DATABASECHANGELOG
+2019-02-25 00:08:35.128  INFO 26125 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1', 'nvoxland', 'db/changelog/changes/users.yaml', NOW(), 1, '8:894a611a268aaaf5b05ab55baee9fef3', 'createTable tableName=users', '', 'EXECUTED', NULL, NULL, '3.6.2', '1033515079')
+2019-02-25 00:08:35.141  INFO 26125 --- [main] l.lockservice.StandardLockService        : Successfully released change log lock
+2019-02-25 00:08:35.315  INFO 26125 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-02-25 00:08:35.454  INFO 26125 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
+2019-02-25 00:08:35.456  INFO 26125 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-02-25 00:08:35.620  INFO 26125 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-02-25 00:08:35.807  INFO 26125 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-02-25 00:08:36.103  INFO 26125 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-02-25 00:08:36.740  INFO 26125 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-02-25 00:08:36.836  WARN 26125 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-02-25 00:08:38.077  INFO 26125 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: ec624deb-f62b-4994-844a-9f483ec42c9b
+
+2019-02-25 00:08:38.437  INFO 26125 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5cfa2ac5, org.springframework.security.web.context.SecurityContextPersistenceFilter@5896b9f5, org.springframework.security.web.header.HeaderWriterFilter@7ac1b6c0, org.springframework.security.web.csrf.CsrfFilter@520c3dcb, org.springframework.security.web.authentication.logout.LogoutFilter@79445efb, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@35f01759, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@ad5cffa, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@4cc89246, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@27fc0217, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@74a5bef0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@727956bb, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@413eaf5d, org.springframework.security.web.session.SessionManagementFilter@7fb82f73, org.springframework.security.web.access.ExceptionTranslationFilter@6f655dbd, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@b6136eb]
+2019-02-25 00:08:38.940  INFO 26125 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2019-02-25 00:08:38.948  INFO 26125 --- [main] c.c.travel.travel.TravelApplication      : Started TravelApplication in 55.753 seconds (JVM running for 56.023)
+2019-02-25 00:09:35.300  INFO 26125 --- [http-nio-127.0.0.1-8888-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-02-25 00:09:35.301  INFO 26125 --- [http-nio-127.0.0.1-8888-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-02-25 00:09:35.313  INFO 26125 --- [http-nio-127.0.0.1-8888-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2019-02-25 00:11:25.536 ERROR 26125 --- [http-nio-127.0.0.1-8888-exec-10] o.a.c.c.C.[Tomcat].[localhost].[/]       : StandardWrapper.Throwable
+
+org.h2.message.DbException: IO Exception: "java.net.UnknownHostException: kubernetes-slave: kubernetes-slave: Name or service not known" [90028-197]
+	at org.h2.message.DbException.get(DbException.java:168) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.message.DbException.convert(DbException.java:299) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.util.NetUtils.getLocalAddress(NetUtils.java:254) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServer.updateURL(WebServer.java:331) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServer.init(WebServer.java:320) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServlet.init(WebServlet.java:52) ~[h2-1.4.197.jar:1.4.197]
+	at javax.servlet.GenericServlet.init(GenericServlet.java:158) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1124) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:777) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:133) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:770) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_191]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_191]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_191]
+Caused by: org.h2.jdbc.JdbcSQLException: IO Exception: "java.net.UnknownHostException: kubernetes-slave: kubernetes-slave: Name or service not known" [90028-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357) ~[h2-1.4.197.jar:1.4.197]
+	... 25 common frames omitted
+Caused by: java.net.UnknownHostException: kubernetes-slave: kubernetes-slave: Name or service not known
+	at java.net.InetAddress.getLocalHost(InetAddress.java:1506) ~[na:1.8.0_191]
+	at org.h2.util.NetUtils.getLocalAddress(NetUtils.java:252) ~[h2-1.4.197.jar:1.4.197]
+	... 22 common frames omitted
+Caused by: java.net.UnknownHostException: kubernetes-slave: Name or service not known
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method) ~[na:1.8.0_191]
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929) ~[na:1.8.0_191]
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1324) ~[na:1.8.0_191]
+	at java.net.InetAddress.getLocalHost(InetAddress.java:1501) ~[na:1.8.0_191]
+	... 23 common frames omitted
+
+2019-02-25 00:11:25.541 ERROR 26125 --- [http-nio-127.0.0.1-8888-exec-10] o.a.c.c.C.[.[.[/].[webServlet]           : Allocate exception for servlet [webServlet]
+
+java.net.UnknownHostException: kubernetes-slave: Name or service not known
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method) ~[na:1.8.0_191]
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929) ~[na:1.8.0_191]
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1324) ~[na:1.8.0_191]
+	at java.net.InetAddress.getLocalHost(InetAddress.java:1501) ~[na:1.8.0_191]
+	at org.h2.util.NetUtils.getLocalAddress(NetUtils.java:252) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServer.updateURL(WebServer.java:331) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServer.init(WebServer.java:320) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServlet.init(WebServlet.java:52) ~[h2-1.4.197.jar:1.4.197]
+	at javax.servlet.GenericServlet.init(GenericServlet.java:158) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1124) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:777) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:133) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:770) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_191]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_191]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_191]
+
+2019-02-25 00:11:58.165  INFO 26125 --- [Thread-4] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-02-25 00:11:58.167  INFO 26125 --- [Thread-4] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-02-25 00:11:58.171  INFO 26125 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-02-25 00:11:58.176  INFO 26125 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-02-25 00:13:02.843  INFO 27262 --- [main] c.c.travel.travel.TravelApplication      : Starting TravelApplication with PID 27262 (/home/thilan/dev-java/travel/api/build/classes/java/main started by thilan in /home/thilan/dev-java/travel/api)
+2019-02-25 00:13:02.846  INFO 27262 --- [main] c.c.travel.travel.TravelApplication      : No active profile set, falling back to default profiles: default
+2019-02-25 00:13:03.375  INFO 27262 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-02-25 00:13:03.393  INFO 27262 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12ms. Found 0 repository interfaces.
+2019-02-25 00:13:03.726  INFO 27262 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration' of type [org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration$$EnhancerBySpringCGLIB$$2c0666c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-02-25 00:13:03.818  INFO 27262 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$3c54a83e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-02-25 00:13:04.204  INFO 27262 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2019-02-25 00:13:04.247  INFO 27262 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-02-25 00:13:04.247  INFO 27262 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-02-25 00:13:04.259  INFO 27262 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+2019-02-25 00:13:04.373  INFO 27262 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-02-25 00:13:04.373  INFO 27262 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1494 ms
+2019-02-25 00:13:04.423  INFO 27262 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-02-25 00:13:04.423  INFO 27262 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-02-25 00:13:04.423  INFO 27262 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'formContentFilter' to: [/*]
+2019-02-25 00:13:04.423  INFO 27262 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-02-25 00:13:04.424  INFO 27262 --- [main] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-02-25 00:13:04.424  INFO 27262 --- [main] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-02-25 00:13:04.425  INFO 27262 --- [main] o.s.b.w.servlet.ServletRegistrationBean  : Servlet webServlet mapped to [/h2-console/*]
+2019-02-25 00:13:04.619  INFO 27262 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-02-25 00:13:04.764  INFO 27262 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-02-25 00:13:13.435  INFO 27262 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM PUBLIC.DATABASECHANGELOGLOCK
+2019-02-25 00:13:13.446  INFO 27262 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE PUBLIC.DATABASECHANGELOGLOCK (ID INT NOT NULL, LOCKED BOOLEAN NOT NULL, LOCKGRANTED TIMESTAMP, LOCKEDBY VARCHAR(255), CONSTRAINT PK_DATABASECHANGELOGLOCK PRIMARY KEY (ID))
+2019-02-25 00:13:13.451  INFO 27262 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM PUBLIC.DATABASECHANGELOGLOCK
+2019-02-25 00:13:13.454  INFO 27262 --- [main] liquibase.executor.jvm.JdbcExecutor      : DELETE FROM PUBLIC.DATABASECHANGELOGLOCK
+2019-02-25 00:13:13.455  INFO 27262 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO PUBLIC.DATABASECHANGELOGLOCK (ID, LOCKED) VALUES (1, FALSE)
+2019-02-25 00:13:13.457  INFO 27262 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT LOCKED FROM PUBLIC.DATABASECHANGELOGLOCK WHERE ID=1
+2019-02-25 00:13:13.465  INFO 27262 --- [main] l.lockservice.StandardLockService        : Successfully acquired change log lock
+2019-02-25 00:13:13.940  INFO 27262 --- [main] l.c.StandardChangeLogHistoryService      : Creating database history table with name: PUBLIC.DATABASECHANGELOG
+2019-02-25 00:13:13.942  INFO 27262 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE PUBLIC.DATABASECHANGELOG (ID VARCHAR(255) NOT NULL, AUTHOR VARCHAR(255) NOT NULL, FILENAME VARCHAR(255) NOT NULL, DATEEXECUTED TIMESTAMP NOT NULL, ORDEREXECUTED INT NOT NULL, EXECTYPE VARCHAR(10) NOT NULL, MD5SUM VARCHAR(35), DESCRIPTION VARCHAR(255), COMMENTS VARCHAR(255), TAG VARCHAR(255), LIQUIBASE VARCHAR(20), CONTEXTS VARCHAR(255), LABELS VARCHAR(255), DEPLOYMENT_ID VARCHAR(10))
+2019-02-25 00:13:13.942  INFO 27262 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM PUBLIC.DATABASECHANGELOG
+2019-02-25 00:13:13.943  INFO 27262 --- [main] l.c.StandardChangeLogHistoryService      : Reading from PUBLIC.DATABASECHANGELOG
+2019-02-25 00:13:13.943  INFO 27262 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT * FROM PUBLIC.DATABASECHANGELOG ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2019-02-25 00:13:13.944  INFO 27262 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM PUBLIC.DATABASECHANGELOGLOCK
+2019-02-25 00:13:13.952  INFO 27262 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE PUBLIC.users (id INT AUTO_INCREMENT NOT NULL, firstname VARCHAR(50), lastname VARCHAR(50) NOT NULL, status CHAR(2), CONSTRAINT PK_USERS PRIMARY KEY (id))
+2019-02-25 00:13:13.971  INFO 27262 --- [main] liquibase.changelog.ChangeSet            : Table users created
+2019-02-25 00:13:13.971  INFO 27262 --- [main] liquibase.changelog.ChangeSet            : ChangeSet db/changelog/changes/users.yaml::1::nvoxland ran successfully in 20ms
+2019-02-25 00:13:13.972  INFO 27262 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT MAX(ORDEREXECUTED) FROM PUBLIC.DATABASECHANGELOG
+2019-02-25 00:13:13.976  INFO 27262 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1', 'nvoxland', 'db/changelog/changes/users.yaml', NOW(), 1, '8:894a611a268aaaf5b05ab55baee9fef3', 'createTable tableName=users', '', 'EXECUTED', NULL, NULL, '3.6.2', '1033793944')
+2019-02-25 00:13:13.978  INFO 27262 --- [main] l.lockservice.StandardLockService        : Successfully released change log lock
+2019-02-25 00:13:14.080  INFO 27262 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-02-25 00:13:14.138  INFO 27262 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
+2019-02-25 00:13:14.139  INFO 27262 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-02-25 00:13:14.263  INFO 27262 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-02-25 00:13:14.390  INFO 27262 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-02-25 00:13:14.591  INFO 27262 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-02-25 00:13:14.811  INFO 27262 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-02-25 00:13:14.854  WARN 27262 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-02-25 00:13:15.423  INFO 27262 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 3562f464-a54d-47db-8134-1510d8ecef62
+
+2019-02-25 00:13:15.521  INFO 27262 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2aafa84f, org.springframework.security.web.context.SecurityContextPersistenceFilter@48d31d25, org.springframework.security.web.header.HeaderWriterFilter@2f61de04, org.springframework.security.web.csrf.CsrfFilter@3a8640f7, org.springframework.security.web.authentication.logout.LogoutFilter@2f8f40cc, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@75add13c, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@86377d5, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@448892f1, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@48f4f03e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6f65a203, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@68f2363, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1626bddf, org.springframework.security.web.session.SessionManagementFilter@5b59c3d, org.springframework.security.web.access.ExceptionTranslationFilter@3c3cd13a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2c3679e5]
+2019-02-25 00:13:15.699  INFO 27262 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2019-02-25 00:13:15.703  INFO 27262 --- [main] c.c.travel.travel.TravelApplication      : Started TravelApplication in 53.402 seconds (JVM running for 53.824)
+2019-02-25 00:18:09.419 ERROR 27262 --- [http-nio-127.0.0.1-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : StandardWrapper.Throwable
+
+org.h2.message.DbException: IO Exception: "java.net.UnknownHostException: kubernetes-slave: kubernetes-slave: Name or service not known" [90028-197]
+	at org.h2.message.DbException.get(DbException.java:168) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.message.DbException.convert(DbException.java:299) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.util.NetUtils.getLocalAddress(NetUtils.java:254) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServer.updateURL(WebServer.java:331) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServer.init(WebServer.java:320) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServlet.init(WebServlet.java:52) ~[h2-1.4.197.jar:1.4.197]
+	at javax.servlet.GenericServlet.init(GenericServlet.java:158) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1124) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:777) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:133) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:770) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_191]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_191]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_191]
+Caused by: org.h2.jdbc.JdbcSQLException: IO Exception: "java.net.UnknownHostException: kubernetes-slave: kubernetes-slave: Name or service not known" [90028-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357) ~[h2-1.4.197.jar:1.4.197]
+	... 25 common frames omitted
+Caused by: java.net.UnknownHostException: kubernetes-slave: kubernetes-slave: Name or service not known
+	at java.net.InetAddress.getLocalHost(InetAddress.java:1506) ~[na:1.8.0_191]
+	at org.h2.util.NetUtils.getLocalAddress(NetUtils.java:252) ~[h2-1.4.197.jar:1.4.197]
+	... 22 common frames omitted
+Caused by: java.net.UnknownHostException: kubernetes-slave: Name or service not known
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method) ~[na:1.8.0_191]
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929) ~[na:1.8.0_191]
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1324) ~[na:1.8.0_191]
+	at java.net.InetAddress.getLocalHost(InetAddress.java:1501) ~[na:1.8.0_191]
+	... 23 common frames omitted
+
+2019-02-25 00:18:09.426 ERROR 27262 --- [http-nio-127.0.0.1-8888-exec-1] o.a.c.c.C.[.[.[/].[webServlet]           : Allocate exception for servlet [webServlet]
+
+java.net.UnknownHostException: kubernetes-slave: Name or service not known
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method) ~[na:1.8.0_191]
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929) ~[na:1.8.0_191]
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1324) ~[na:1.8.0_191]
+	at java.net.InetAddress.getLocalHost(InetAddress.java:1501) ~[na:1.8.0_191]
+	at org.h2.util.NetUtils.getLocalAddress(NetUtils.java:252) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServer.updateURL(WebServer.java:331) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServer.init(WebServer.java:320) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServlet.init(WebServlet.java:52) ~[h2-1.4.197.jar:1.4.197]
+	at javax.servlet.GenericServlet.init(GenericServlet.java:158) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1124) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:777) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:133) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:770) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_191]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_191]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_191]
+
+2019-02-25 00:18:09.443  INFO 27262 --- [http-nio-127.0.0.1-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-02-25 00:18:09.443  INFO 27262 --- [http-nio-127.0.0.1-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-02-25 00:18:09.456  INFO 27262 --- [http-nio-127.0.0.1-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 12 ms
+2019-02-25 00:22:03.626  INFO 27262 --- [Thread-3] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-02-25 00:22:03.627  INFO 27262 --- [Thread-3] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-02-25 00:22:03.632  INFO 27262 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-02-25 00:22:03.643  INFO 27262 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-02-25 00:25:59.808  INFO 30359 --- [main] c.c.travel.travel.TravelApplication      : Starting TravelApplication with PID 30359 (/home/thilan/dev-java/travel/api/build/classes/java/main started by thilan in /home/thilan/dev-java/travel/api)
+2019-02-25 00:25:59.817  INFO 30359 --- [main] c.c.travel.travel.TravelApplication      : No active profile set, falling back to default profiles: default
+2019-02-25 00:26:00.377  INFO 30359 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-02-25 00:26:00.395  INFO 30359 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12ms. Found 0 repository interfaces.
+2019-02-25 00:26:00.710  INFO 30359 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration' of type [org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration$$EnhancerBySpringCGLIB$$c17f4107] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-02-25 00:26:00.775  INFO 30359 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$fb1382d9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-02-25 00:26:01.125  INFO 30359 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2019-02-25 00:26:01.145  INFO 30359 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-02-25 00:26:01.145  INFO 30359 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-02-25 00:26:01.156  INFO 30359 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+2019-02-25 00:26:01.242  INFO 30359 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-02-25 00:26:01.242  INFO 30359 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1370 ms
+2019-02-25 00:26:01.291  INFO 30359 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-02-25 00:26:01.292  INFO 30359 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-02-25 00:26:01.292  INFO 30359 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'formContentFilter' to: [/*]
+2019-02-25 00:26:01.292  INFO 30359 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-02-25 00:26:01.293  INFO 30359 --- [main] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-02-25 00:26:01.294  INFO 30359 --- [main] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-02-25 00:26:01.295  INFO 30359 --- [main] o.s.b.w.servlet.ServletRegistrationBean  : Servlet webServlet mapped to [/h2-console/*]
+2019-02-25 00:26:01.469  INFO 30359 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-02-25 00:26:01.593  INFO 30359 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-02-25 00:26:10.546  INFO 30359 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM PUBLIC.DATABASECHANGELOGLOCK
+2019-02-25 00:26:10.559  INFO 30359 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE PUBLIC.DATABASECHANGELOGLOCK (ID INT NOT NULL, LOCKED BOOLEAN NOT NULL, LOCKGRANTED TIMESTAMP, LOCKEDBY VARCHAR(255), CONSTRAINT PK_DATABASECHANGELOGLOCK PRIMARY KEY (ID))
+2019-02-25 00:26:10.564  INFO 30359 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM PUBLIC.DATABASECHANGELOGLOCK
+2019-02-25 00:26:10.566  INFO 30359 --- [main] liquibase.executor.jvm.JdbcExecutor      : DELETE FROM PUBLIC.DATABASECHANGELOGLOCK
+2019-02-25 00:26:10.567  INFO 30359 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO PUBLIC.DATABASECHANGELOGLOCK (ID, LOCKED) VALUES (1, FALSE)
+2019-02-25 00:26:10.569  INFO 30359 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT LOCKED FROM PUBLIC.DATABASECHANGELOGLOCK WHERE ID=1
+2019-02-25 00:26:10.577  INFO 30359 --- [main] l.lockservice.StandardLockService        : Successfully acquired change log lock
+2019-02-25 00:26:11.033  INFO 30359 --- [main] l.c.StandardChangeLogHistoryService      : Creating database history table with name: PUBLIC.DATABASECHANGELOG
+2019-02-25 00:26:11.035  INFO 30359 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE PUBLIC.DATABASECHANGELOG (ID VARCHAR(255) NOT NULL, AUTHOR VARCHAR(255) NOT NULL, FILENAME VARCHAR(255) NOT NULL, DATEEXECUTED TIMESTAMP NOT NULL, ORDEREXECUTED INT NOT NULL, EXECTYPE VARCHAR(10) NOT NULL, MD5SUM VARCHAR(35), DESCRIPTION VARCHAR(255), COMMENTS VARCHAR(255), TAG VARCHAR(255), LIQUIBASE VARCHAR(20), CONTEXTS VARCHAR(255), LABELS VARCHAR(255), DEPLOYMENT_ID VARCHAR(10))
+2019-02-25 00:26:11.036  INFO 30359 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM PUBLIC.DATABASECHANGELOG
+2019-02-25 00:26:11.036  INFO 30359 --- [main] l.c.StandardChangeLogHistoryService      : Reading from PUBLIC.DATABASECHANGELOG
+2019-02-25 00:26:11.037  INFO 30359 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT * FROM PUBLIC.DATABASECHANGELOG ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2019-02-25 00:26:11.038  INFO 30359 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM PUBLIC.DATABASECHANGELOGLOCK
+2019-02-25 00:26:11.048  INFO 30359 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE PUBLIC.users (id INT AUTO_INCREMENT NOT NULL, firstname VARCHAR(50), lastname VARCHAR(50) NOT NULL, status CHAR(2), CONSTRAINT PK_USERS PRIMARY KEY (id))
+2019-02-25 00:26:11.053  INFO 30359 --- [main] liquibase.changelog.ChangeSet            : Table users created
+2019-02-25 00:26:11.053  INFO 30359 --- [main] liquibase.changelog.ChangeSet            : ChangeSet db/changelog/changes/users.yaml::1::nvoxland ran successfully in 5ms
+2019-02-25 00:26:11.054  INFO 30359 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT MAX(ORDEREXECUTED) FROM PUBLIC.DATABASECHANGELOG
+2019-02-25 00:26:11.057  INFO 30359 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1', 'nvoxland', 'db/changelog/changes/users.yaml', NOW(), 1, '8:894a611a268aaaf5b05ab55baee9fef3', 'createTable tableName=users', '', 'EXECUTED', NULL, NULL, '3.6.2', '1034571038')
+2019-02-25 00:26:11.059  INFO 30359 --- [main] l.lockservice.StandardLockService        : Successfully released change log lock
+2019-02-25 00:26:11.185  INFO 30359 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-02-25 00:26:11.250  INFO 30359 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
+2019-02-25 00:26:11.252  INFO 30359 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-02-25 00:26:11.384  INFO 30359 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-02-25 00:26:11.504  INFO 30359 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-02-25 00:26:11.699  INFO 30359 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-02-25 00:26:11.948  INFO 30359 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-02-25 00:26:11.993  WARN 30359 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-02-25 00:26:12.487  INFO 30359 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 4da511e9-bfc0-47de-baaa-1554b5b5a58b
+
+2019-02-25 00:26:12.580  INFO 30359 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5cd701e4, org.springframework.security.web.context.SecurityContextPersistenceFilter@3c89b864, org.springframework.security.web.header.HeaderWriterFilter@1e7cfd49, org.springframework.security.web.csrf.CsrfFilter@48aa0813, org.springframework.security.web.authentication.logout.LogoutFilter@5f5a33ed, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@199806aa, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@163df259, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@6c9151c1, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@18b3db6e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@30a62a5b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5c740c5a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2c3679e5, org.springframework.security.web.session.SessionManagementFilter@ca10069, org.springframework.security.web.access.ExceptionTranslationFilter@1aa59698, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2b41b8bb]
+2019-02-25 00:26:12.691  INFO 30359 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2019-02-25 00:26:12.694  INFO 30359 --- [main] c.c.travel.travel.TravelApplication      : Started TravelApplication in 53.318 seconds (JVM running for 53.596)
+2019-02-25 00:26:17.184  INFO 30359 --- [http-nio-127.0.0.1-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-02-25 00:26:17.184  INFO 30359 --- [http-nio-127.0.0.1-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-02-25 00:26:17.194  INFO 30359 --- [http-nio-127.0.0.1-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2019-02-25 00:27:25.730 ERROR 30359 --- [http-nio-127.0.0.1-8888-exec-7] o.a.c.c.C.[Tomcat].[localhost].[/]       : StandardWrapper.Throwable
+
+org.h2.message.DbException: IO Exception: "java.net.UnknownHostException: kubernetes-slave: kubernetes-slave: Name or service not known" [90028-197]
+	at org.h2.message.DbException.get(DbException.java:168) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.message.DbException.convert(DbException.java:299) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.util.NetUtils.getLocalAddress(NetUtils.java:254) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServer.updateURL(WebServer.java:331) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServer.init(WebServer.java:320) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServlet.init(WebServlet.java:52) ~[h2-1.4.197.jar:1.4.197]
+	at javax.servlet.GenericServlet.init(GenericServlet.java:158) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1124) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:777) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:133) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:770) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_191]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_191]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_191]
+Caused by: org.h2.jdbc.JdbcSQLException: IO Exception: "java.net.UnknownHostException: kubernetes-slave: kubernetes-slave: Name or service not known" [90028-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357) ~[h2-1.4.197.jar:1.4.197]
+	... 25 common frames omitted
+Caused by: java.net.UnknownHostException: kubernetes-slave: kubernetes-slave: Name or service not known
+	at java.net.InetAddress.getLocalHost(InetAddress.java:1506) ~[na:1.8.0_191]
+	at org.h2.util.NetUtils.getLocalAddress(NetUtils.java:252) ~[h2-1.4.197.jar:1.4.197]
+	... 22 common frames omitted
+Caused by: java.net.UnknownHostException: kubernetes-slave: Name or service not known
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method) ~[na:1.8.0_191]
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929) ~[na:1.8.0_191]
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1324) ~[na:1.8.0_191]
+	at java.net.InetAddress.getLocalHost(InetAddress.java:1501) ~[na:1.8.0_191]
+	... 23 common frames omitted
+
+2019-02-25 00:27:25.735 ERROR 30359 --- [http-nio-127.0.0.1-8888-exec-7] o.a.c.c.C.[.[.[/].[webServlet]           : Allocate exception for servlet [webServlet]
+
+java.net.UnknownHostException: kubernetes-slave: Name or service not known
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method) ~[na:1.8.0_191]
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929) ~[na:1.8.0_191]
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1324) ~[na:1.8.0_191]
+	at java.net.InetAddress.getLocalHost(InetAddress.java:1501) ~[na:1.8.0_191]
+	at org.h2.util.NetUtils.getLocalAddress(NetUtils.java:252) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServer.updateURL(WebServer.java:331) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServer.init(WebServer.java:320) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServlet.init(WebServlet.java:52) ~[h2-1.4.197.jar:1.4.197]
+	at javax.servlet.GenericServlet.init(GenericServlet.java:158) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1124) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:777) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:133) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:770) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_191]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_191]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_191]
+
+2019-02-25 00:28:47.967  INFO 30359 --- [Thread-3] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-02-25 00:28:47.968  INFO 30359 --- [Thread-3] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-02-25 00:28:47.969  INFO 30359 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-02-25 00:28:47.975  INFO 30359 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-02-25 00:29:46.506  INFO 30950 --- [main] c.c.travel.travel.TravelApplication      : Starting TravelApplication with PID 30950 (/home/thilan/dev-java/travel/api/build/classes/java/main started by thilan in /home/thilan/dev-java/travel/api)
+2019-02-25 00:29:46.515  INFO 30950 --- [main] c.c.travel.travel.TravelApplication      : No active profile set, falling back to default profiles: default
+2019-02-25 00:29:47.095  INFO 30950 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-02-25 00:29:47.126  INFO 30950 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13ms. Found 0 repository interfaces.
+2019-02-25 00:29:47.485  INFO 30950 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration' of type [org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration$$EnhancerBySpringCGLIB$$1fb58b58] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-02-25 00:29:47.562  INFO 30950 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$5949cd2a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-02-25 00:29:47.875  INFO 30950 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2019-02-25 00:29:47.896  INFO 30950 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-02-25 00:29:47.896  INFO 30950 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-02-25 00:29:47.906  INFO 30950 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+2019-02-25 00:29:47.990  INFO 30950 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-02-25 00:29:47.990  INFO 30950 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1415 ms
+2019-02-25 00:29:48.040  INFO 30950 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-02-25 00:29:48.040  INFO 30950 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-02-25 00:29:48.040  INFO 30950 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'formContentFilter' to: [/*]
+2019-02-25 00:29:48.040  INFO 30950 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-02-25 00:29:48.041  INFO 30950 --- [main] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-02-25 00:29:48.041  INFO 30950 --- [main] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-02-25 00:29:48.042  INFO 30950 --- [main] o.s.b.w.servlet.ServletRegistrationBean  : Servlet webServlet mapped to [/h2-console/*]
+2019-02-25 00:29:48.203  INFO 30950 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-02-25 00:29:48.332  INFO 30950 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-02-25 00:29:57.446  INFO 30950 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM PUBLIC.DATABASECHANGELOGLOCK
+2019-02-25 00:29:57.460  INFO 30950 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE PUBLIC.DATABASECHANGELOGLOCK (ID INT NOT NULL, LOCKED BOOLEAN NOT NULL, LOCKGRANTED TIMESTAMP, LOCKEDBY VARCHAR(255), CONSTRAINT PK_DATABASECHANGELOGLOCK PRIMARY KEY (ID))
+2019-02-25 00:29:57.465  INFO 30950 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM PUBLIC.DATABASECHANGELOGLOCK
+2019-02-25 00:29:57.467  INFO 30950 --- [main] liquibase.executor.jvm.JdbcExecutor      : DELETE FROM PUBLIC.DATABASECHANGELOGLOCK
+2019-02-25 00:29:57.468  INFO 30950 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO PUBLIC.DATABASECHANGELOGLOCK (ID, LOCKED) VALUES (1, FALSE)
+2019-02-25 00:29:57.471  INFO 30950 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT LOCKED FROM PUBLIC.DATABASECHANGELOGLOCK WHERE ID=1
+2019-02-25 00:29:57.478  INFO 30950 --- [main] l.lockservice.StandardLockService        : Successfully acquired change log lock
+2019-02-25 00:29:57.992  INFO 30950 --- [main] l.c.StandardChangeLogHistoryService      : Creating database history table with name: PUBLIC.DATABASECHANGELOG
+2019-02-25 00:29:57.993  INFO 30950 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE PUBLIC.DATABASECHANGELOG (ID VARCHAR(255) NOT NULL, AUTHOR VARCHAR(255) NOT NULL, FILENAME VARCHAR(255) NOT NULL, DATEEXECUTED TIMESTAMP NOT NULL, ORDEREXECUTED INT NOT NULL, EXECTYPE VARCHAR(10) NOT NULL, MD5SUM VARCHAR(35), DESCRIPTION VARCHAR(255), COMMENTS VARCHAR(255), TAG VARCHAR(255), LIQUIBASE VARCHAR(20), CONTEXTS VARCHAR(255), LABELS VARCHAR(255), DEPLOYMENT_ID VARCHAR(10))
+2019-02-25 00:29:57.995  INFO 30950 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM PUBLIC.DATABASECHANGELOG
+2019-02-25 00:29:57.995  INFO 30950 --- [main] l.c.StandardChangeLogHistoryService      : Reading from PUBLIC.DATABASECHANGELOG
+2019-02-25 00:29:57.996  INFO 30950 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT * FROM PUBLIC.DATABASECHANGELOG ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2019-02-25 00:29:57.997  INFO 30950 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM PUBLIC.DATABASECHANGELOGLOCK
+2019-02-25 00:29:58.009  INFO 30950 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE PUBLIC.users (id INT AUTO_INCREMENT NOT NULL, firstname VARCHAR(50), lastname VARCHAR(50) NOT NULL, status CHAR(2), CONSTRAINT PK_USERS PRIMARY KEY (id))
+2019-02-25 00:29:58.013  INFO 30950 --- [main] liquibase.changelog.ChangeSet            : Table users created
+2019-02-25 00:29:58.014  INFO 30950 --- [main] liquibase.changelog.ChangeSet            : ChangeSet db/changelog/changes/users.yaml::1::nvoxland ran successfully in 6ms
+2019-02-25 00:29:58.015  INFO 30950 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT MAX(ORDEREXECUTED) FROM PUBLIC.DATABASECHANGELOG
+2019-02-25 00:29:58.020  INFO 30950 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1', 'nvoxland', 'db/changelog/changes/users.yaml', NOW(), 1, '8:894a611a268aaaf5b05ab55baee9fef3', 'createTable tableName=users', '', 'EXECUTED', NULL, NULL, '3.6.2', '1034797997')
+2019-02-25 00:29:58.024  INFO 30950 --- [main] l.lockservice.StandardLockService        : Successfully released change log lock
+2019-02-25 00:29:58.170  INFO 30950 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-02-25 00:29:58.231  INFO 30950 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
+2019-02-25 00:29:58.232  INFO 30950 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-02-25 00:29:58.366  INFO 30950 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-02-25 00:29:58.492  INFO 30950 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-02-25 00:29:58.661  INFO 30950 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-02-25 00:29:58.879  INFO 30950 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-02-25 00:29:58.923  WARN 30950 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-02-25 00:29:59.432  INFO 30950 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: dc23313a-4a01-494d-8290-3f414eb8f0fa
+
+2019-02-25 00:29:59.522  INFO 30950 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2299f6d7, org.springframework.security.web.context.SecurityContextPersistenceFilter@45e69324, org.springframework.security.web.header.HeaderWriterFilter@2cacb445, org.springframework.security.web.csrf.CsrfFilter@6b64429e, org.springframework.security.web.authentication.logout.LogoutFilter@2f61de04, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@598e5cb8, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@7fd2a67a, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@5cd701e4, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@7d95166a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3400d6fa, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@54a6ef6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6c9151c1, org.springframework.security.web.session.SessionManagementFilter@3a8640f7, org.springframework.security.web.access.ExceptionTranslationFilter@539ee811, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@20a946d9]
+2019-02-25 00:29:59.659  INFO 30950 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2019-02-25 00:29:59.663  INFO 30950 --- [main] c.c.travel.travel.TravelApplication      : Started TravelApplication in 53.598 seconds (JVM running for 53.881)
+2019-02-25 00:30:03.465  INFO 30950 --- [Thread-3] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-02-25 00:30:03.469  INFO 30950 --- [Thread-3] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-02-25 00:30:03.473  INFO 30950 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-02-25 00:30:03.479  INFO 30950 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-02-25 00:30:46.869  INFO 31175 --- [main] c.c.travel.travel.TravelApplication      : Starting TravelApplication with PID 31175 (/home/thilan/dev-java/travel/api/build/classes/java/main started by thilan in /home/thilan/dev-java/travel/api)
+2019-02-25 00:30:46.872  INFO 31175 --- [main] c.c.travel.travel.TravelApplication      : No active profile set, falling back to default profiles: default
+2019-02-25 00:30:47.709  INFO 31175 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2019-02-25 00:30:47.731  INFO 31175 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-02-25 00:30:47.731  INFO 31175 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-02-25 00:30:47.741  INFO 31175 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+2019-02-25 00:30:47.824  INFO 31175 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-02-25 00:30:47.825  INFO 31175 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 920 ms
+2019-02-25 00:30:47.854  INFO 31175 --- [main] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-02-25 00:30:47.856  INFO 31175 --- [main] o.s.b.w.servlet.ServletRegistrationBean  : Servlet webServlet mapped to [/h2-console/*]
+2019-02-25 00:30:47.858  INFO 31175 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-02-25 00:30:47.858  INFO 31175 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-02-25 00:30:47.858  INFO 31175 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'formContentFilter' to: [/*]
+2019-02-25 00:30:47.858  INFO 31175 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-02-25 00:30:48.043  INFO 31175 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-02-25 00:30:48.332  INFO 31175 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2019-02-25 00:30:48.335  INFO 31175 --- [main] c.c.travel.travel.TravelApplication      : Started TravelApplication in 41.957 seconds (JVM running for 42.254)
+2019-02-25 00:31:38.003  INFO 31175 --- [http-nio-127.0.0.1-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-02-25 00:31:38.003  INFO 31175 --- [http-nio-127.0.0.1-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-02-25 00:31:38.010  INFO 31175 --- [http-nio-127.0.0.1-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2019-02-25 00:32:04.314 ERROR 31175 --- [http-nio-127.0.0.1-8888-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : StandardWrapper.Throwable
+
+org.h2.message.DbException: IO Exception: "java.net.UnknownHostException: kubernetes-slave: kubernetes-slave: Name or service not known" [90028-197]
+	at org.h2.message.DbException.get(DbException.java:168) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.message.DbException.convert(DbException.java:299) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.util.NetUtils.getLocalAddress(NetUtils.java:254) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServer.updateURL(WebServer.java:331) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServer.init(WebServer.java:320) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServlet.init(WebServlet.java:52) ~[h2-1.4.197.jar:1.4.197]
+	at javax.servlet.GenericServlet.init(GenericServlet.java:158) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1124) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:777) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:133) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:770) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_191]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_191]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_191]
+Caused by: org.h2.jdbc.JdbcSQLException: IO Exception: "java.net.UnknownHostException: kubernetes-slave: kubernetes-slave: Name or service not known" [90028-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357) ~[h2-1.4.197.jar:1.4.197]
+	... 25 common frames omitted
+Caused by: java.net.UnknownHostException: kubernetes-slave: kubernetes-slave: Name or service not known
+	at java.net.InetAddress.getLocalHost(InetAddress.java:1506) ~[na:1.8.0_191]
+	at org.h2.util.NetUtils.getLocalAddress(NetUtils.java:252) ~[h2-1.4.197.jar:1.4.197]
+	... 22 common frames omitted
+Caused by: java.net.UnknownHostException: kubernetes-slave: Name or service not known
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method) ~[na:1.8.0_191]
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929) ~[na:1.8.0_191]
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1324) ~[na:1.8.0_191]
+	at java.net.InetAddress.getLocalHost(InetAddress.java:1501) ~[na:1.8.0_191]
+	... 23 common frames omitted
+
+2019-02-25 00:32:04.316 ERROR 31175 --- [http-nio-127.0.0.1-8888-exec-3] o.a.c.c.C.[.[.[/].[webServlet]           : Allocate exception for servlet [webServlet]
+
+java.net.UnknownHostException: kubernetes-slave: Name or service not known
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method) ~[na:1.8.0_191]
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929) ~[na:1.8.0_191]
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1324) ~[na:1.8.0_191]
+	at java.net.InetAddress.getLocalHost(InetAddress.java:1501) ~[na:1.8.0_191]
+	at org.h2.util.NetUtils.getLocalAddress(NetUtils.java:252) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServer.updateURL(WebServer.java:331) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServer.init(WebServer.java:320) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServlet.init(WebServlet.java:52) ~[h2-1.4.197.jar:1.4.197]
+	at javax.servlet.GenericServlet.init(GenericServlet.java:158) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1124) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:777) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:133) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:770) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_191]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_191]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_191]
+
+2019-02-25 00:33:02.046 ERROR 31175 --- [http-nio-127.0.0.1-8888-exec-5] o.a.c.c.C.[Tomcat].[localhost].[/]       : StandardWrapper.Throwable
+
+org.h2.message.DbException: IO Exception: "java.net.UnknownHostException: kubernetes-slave: kubernetes-slave: Name or service not known" [90028-197]
+	at org.h2.message.DbException.get(DbException.java:168) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.message.DbException.convert(DbException.java:299) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.util.NetUtils.getLocalAddress(NetUtils.java:254) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServer.updateURL(WebServer.java:331) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServer.init(WebServer.java:320) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServlet.init(WebServlet.java:52) ~[h2-1.4.197.jar:1.4.197]
+	at javax.servlet.GenericServlet.init(GenericServlet.java:158) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1124) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:777) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:133) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:770) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_191]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_191]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_191]
+Caused by: org.h2.jdbc.JdbcSQLException: IO Exception: "java.net.UnknownHostException: kubernetes-slave: kubernetes-slave: Name or service not known" [90028-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357) ~[h2-1.4.197.jar:1.4.197]
+	... 25 common frames omitted
+Caused by: java.net.UnknownHostException: kubernetes-slave: kubernetes-slave: Name or service not known
+	at java.net.InetAddress.getLocalHost(InetAddress.java:1506) ~[na:1.8.0_191]
+	at org.h2.util.NetUtils.getLocalAddress(NetUtils.java:252) ~[h2-1.4.197.jar:1.4.197]
+	... 22 common frames omitted
+Caused by: java.net.UnknownHostException: kubernetes-slave: Name or service not known
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method) ~[na:1.8.0_191]
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929) ~[na:1.8.0_191]
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1324) ~[na:1.8.0_191]
+	at java.net.InetAddress.getLocalHost(InetAddress.java:1501) ~[na:1.8.0_191]
+	... 23 common frames omitted
+
+2019-02-25 00:33:02.049 ERROR 31175 --- [http-nio-127.0.0.1-8888-exec-5] o.a.c.c.C.[.[.[/].[webServlet]           : Allocate exception for servlet [webServlet]
+
+java.net.UnknownHostException: kubernetes-slave: Name or service not known
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method) ~[na:1.8.0_191]
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929) ~[na:1.8.0_191]
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1324) ~[na:1.8.0_191]
+	at java.net.InetAddress.getLocalHost(InetAddress.java:1501) ~[na:1.8.0_191]
+	at org.h2.util.NetUtils.getLocalAddress(NetUtils.java:252) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServer.updateURL(WebServer.java:331) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServer.init(WebServer.java:320) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServlet.init(WebServlet.java:52) ~[h2-1.4.197.jar:1.4.197]
+	at javax.servlet.GenericServlet.init(GenericServlet.java:158) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1124) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:777) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:133) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:770) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_191]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_191]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_191]
+
+2019-02-25 00:34:33.518  INFO 31175 --- [Thread-3] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-02-25 00:35:16.147  INFO 31974 --- [main] c.c.travel.travel.TravelApplication      : Starting TravelApplication with PID 31974 (/home/thilan/dev-java/travel/api/build/classes/java/main started by thilan in /home/thilan/dev-java/travel/api)
+2019-02-25 00:35:16.157  INFO 31974 --- [main] c.c.travel.travel.TravelApplication      : No active profile set, falling back to default profiles: default
+2019-02-25 00:35:17.412  INFO 31974 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8001 (http)
+2019-02-25 00:35:17.441  INFO 31974 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-02-25 00:35:17.442  INFO 31974 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-02-25 00:35:17.457  INFO 31974 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+2019-02-25 00:35:17.578  INFO 31974 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-02-25 00:35:17.578  INFO 31974 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1362 ms
+2019-02-25 00:35:17.623  INFO 31974 --- [main] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-02-25 00:35:17.624  INFO 31974 --- [main] o.s.b.w.servlet.ServletRegistrationBean  : Servlet webServlet mapped to [/h2-console/*]
+2019-02-25 00:35:17.628  INFO 31974 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-02-25 00:35:17.628  INFO 31974 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-02-25 00:35:17.628  INFO 31974 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'formContentFilter' to: [/*]
+2019-02-25 00:35:17.629  INFO 31974 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-02-25 00:35:17.896  INFO 31974 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-02-25 00:35:18.249  INFO 31974 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8001 (http) with context path ''
+2019-02-25 00:35:18.252  INFO 31974 --- [main] c.c.travel.travel.TravelApplication      : Started TravelApplication in 42.554 seconds (JVM running for 42.867)
+2019-02-25 00:35:30.650  INFO 31974 --- [http-nio-127.0.0.1-8001-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-02-25 00:35:30.652  INFO 31974 --- [http-nio-127.0.0.1-8001-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-02-25 00:35:30.659  INFO 31974 --- [http-nio-127.0.0.1-8001-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2019-02-25 00:35:50.691 ERROR 31974 --- [http-nio-127.0.0.1-8001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : StandardWrapper.Throwable
+
+org.h2.message.DbException: IO Exception: "java.net.UnknownHostException: kubernetes-slave: kubernetes-slave: Name or service not known" [90028-197]
+	at org.h2.message.DbException.get(DbException.java:168) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.message.DbException.convert(DbException.java:299) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.util.NetUtils.getLocalAddress(NetUtils.java:254) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServer.updateURL(WebServer.java:331) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServer.init(WebServer.java:320) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServlet.init(WebServlet.java:52) ~[h2-1.4.197.jar:1.4.197]
+	at javax.servlet.GenericServlet.init(GenericServlet.java:158) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1124) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:777) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:133) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:770) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_191]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_191]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_191]
+Caused by: org.h2.jdbc.JdbcSQLException: IO Exception: "java.net.UnknownHostException: kubernetes-slave: kubernetes-slave: Name or service not known" [90028-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357) ~[h2-1.4.197.jar:1.4.197]
+	... 25 common frames omitted
+Caused by: java.net.UnknownHostException: kubernetes-slave: kubernetes-slave: Name or service not known
+	at java.net.InetAddress.getLocalHost(InetAddress.java:1506) ~[na:1.8.0_191]
+	at org.h2.util.NetUtils.getLocalAddress(NetUtils.java:252) ~[h2-1.4.197.jar:1.4.197]
+	... 22 common frames omitted
+Caused by: java.net.UnknownHostException: kubernetes-slave: Name or service not known
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method) ~[na:1.8.0_191]
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929) ~[na:1.8.0_191]
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1324) ~[na:1.8.0_191]
+	at java.net.InetAddress.getLocalHost(InetAddress.java:1501) ~[na:1.8.0_191]
+	... 23 common frames omitted
+
+2019-02-25 00:35:50.693 ERROR 31974 --- [http-nio-127.0.0.1-8001-exec-1] o.a.c.c.C.[.[.[/].[webServlet]           : Allocate exception for servlet [webServlet]
+
+java.net.UnknownHostException: kubernetes-slave: Name or service not known
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method) ~[na:1.8.0_191]
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929) ~[na:1.8.0_191]
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1324) ~[na:1.8.0_191]
+	at java.net.InetAddress.getLocalHost(InetAddress.java:1501) ~[na:1.8.0_191]
+	at org.h2.util.NetUtils.getLocalAddress(NetUtils.java:252) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServer.updateURL(WebServer.java:331) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServer.init(WebServer.java:320) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServlet.init(WebServlet.java:52) ~[h2-1.4.197.jar:1.4.197]
+	at javax.servlet.GenericServlet.init(GenericServlet.java:158) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1124) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:777) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:133) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:770) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_191]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_191]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_191]
+
+2019-02-25 00:36:21.071 ERROR 31974 --- [http-nio-127.0.0.1-8001-exec-4] o.a.c.c.C.[Tomcat].[localhost].[/]       : StandardWrapper.Throwable
+
+org.h2.message.DbException: IO Exception: "java.net.UnknownHostException: kubernetes-slave: kubernetes-slave: Name or service not known" [90028-197]
+	at org.h2.message.DbException.get(DbException.java:168) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.message.DbException.convert(DbException.java:299) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.util.NetUtils.getLocalAddress(NetUtils.java:254) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServer.updateURL(WebServer.java:331) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServer.init(WebServer.java:320) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServlet.init(WebServlet.java:52) ~[h2-1.4.197.jar:1.4.197]
+	at javax.servlet.GenericServlet.init(GenericServlet.java:158) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1124) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:777) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:133) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:770) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_191]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_191]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_191]
+Caused by: org.h2.jdbc.JdbcSQLException: IO Exception: "java.net.UnknownHostException: kubernetes-slave: kubernetes-slave: Name or service not known" [90028-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357) ~[h2-1.4.197.jar:1.4.197]
+	... 25 common frames omitted
+Caused by: java.net.UnknownHostException: kubernetes-slave: kubernetes-slave: Name or service not known
+	at java.net.InetAddress.getLocalHost(InetAddress.java:1506) ~[na:1.8.0_191]
+	at org.h2.util.NetUtils.getLocalAddress(NetUtils.java:252) ~[h2-1.4.197.jar:1.4.197]
+	... 22 common frames omitted
+Caused by: java.net.UnknownHostException: kubernetes-slave: Name or service not known
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method) ~[na:1.8.0_191]
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929) ~[na:1.8.0_191]
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1324) ~[na:1.8.0_191]
+	at java.net.InetAddress.getLocalHost(InetAddress.java:1501) ~[na:1.8.0_191]
+	... 23 common frames omitted
+
+2019-02-25 00:36:21.074 ERROR 31974 --- [http-nio-127.0.0.1-8001-exec-4] o.a.c.c.C.[.[.[/].[webServlet]           : Allocate exception for servlet [webServlet]
+
+java.net.UnknownHostException: kubernetes-slave: Name or service not known
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method) ~[na:1.8.0_191]
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929) ~[na:1.8.0_191]
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1324) ~[na:1.8.0_191]
+	at java.net.InetAddress.getLocalHost(InetAddress.java:1501) ~[na:1.8.0_191]
+	at org.h2.util.NetUtils.getLocalAddress(NetUtils.java:252) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServer.updateURL(WebServer.java:331) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServer.init(WebServer.java:320) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServlet.init(WebServlet.java:52) ~[h2-1.4.197.jar:1.4.197]
+	at javax.servlet.GenericServlet.init(GenericServlet.java:158) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1124) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:777) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:133) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:770) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_191]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_191]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_191]
+
+2019-02-25 00:41:28.885 ERROR 31974 --- [http-nio-127.0.0.1-8001-exec-6] o.a.c.c.C.[Tomcat].[localhost].[/]       : StandardWrapper.Throwable
+
+org.h2.message.DbException: IO Exception: "java.net.UnknownHostException: kubernetes-slave: kubernetes-slave: Name or service not known" [90028-197]
+	at org.h2.message.DbException.get(DbException.java:168) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.message.DbException.convert(DbException.java:299) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.util.NetUtils.getLocalAddress(NetUtils.java:254) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServer.updateURL(WebServer.java:331) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServer.init(WebServer.java:320) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServlet.init(WebServlet.java:52) ~[h2-1.4.197.jar:1.4.197]
+	at javax.servlet.GenericServlet.init(GenericServlet.java:158) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1124) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:777) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:133) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:770) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_191]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_191]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_191]
+Caused by: org.h2.jdbc.JdbcSQLException: IO Exception: "java.net.UnknownHostException: kubernetes-slave: kubernetes-slave: Name or service not known" [90028-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357) ~[h2-1.4.197.jar:1.4.197]
+	... 25 common frames omitted
+Caused by: java.net.UnknownHostException: kubernetes-slave: kubernetes-slave: Name or service not known
+	at java.net.InetAddress.getLocalHost(InetAddress.java:1506) ~[na:1.8.0_191]
+	at org.h2.util.NetUtils.getLocalAddress(NetUtils.java:252) ~[h2-1.4.197.jar:1.4.197]
+	... 22 common frames omitted
+Caused by: java.net.UnknownHostException: kubernetes-slave: Name or service not known
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method) ~[na:1.8.0_191]
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929) ~[na:1.8.0_191]
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1324) ~[na:1.8.0_191]
+	at java.net.InetAddress.getLocalHost(InetAddress.java:1501) ~[na:1.8.0_191]
+	... 23 common frames omitted
+
+2019-02-25 00:41:28.888 ERROR 31974 --- [http-nio-127.0.0.1-8001-exec-6] o.a.c.c.C.[.[.[/].[webServlet]           : Allocate exception for servlet [webServlet]
+
+java.net.UnknownHostException: kubernetes-slave: Name or service not known
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method) ~[na:1.8.0_191]
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929) ~[na:1.8.0_191]
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1324) ~[na:1.8.0_191]
+	at java.net.InetAddress.getLocalHost(InetAddress.java:1501) ~[na:1.8.0_191]
+	at org.h2.util.NetUtils.getLocalAddress(NetUtils.java:252) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServer.updateURL(WebServer.java:331) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServer.init(WebServer.java:320) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServlet.init(WebServlet.java:52) ~[h2-1.4.197.jar:1.4.197]
+	at javax.servlet.GenericServlet.init(GenericServlet.java:158) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1124) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:777) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:133) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:770) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_191]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_191]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_191]
+
+2019-02-25 00:41:49.712  INFO 31974 --- [Thread-3] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-02-25 00:42:35.584  INFO 961 --- [main] c.c.travel.travel.TravelApplication      : Starting TravelApplication with PID 961 (/home/thilan/dev-java/travel/api/build/classes/java/main started by thilan in /home/thilan/dev-java/travel/api)
+2019-02-25 00:42:35.587  INFO 961 --- [main] c.c.travel.travel.TravelApplication      : No active profile set, falling back to default profiles: default
+2019-02-25 00:42:36.720  INFO 961 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8001 (http)
+2019-02-25 00:42:36.747  INFO 961 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-02-25 00:42:36.747  INFO 961 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-02-25 00:42:36.762  INFO 961 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+2019-02-25 00:42:36.871  INFO 961 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-02-25 00:42:36.871  INFO 961 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1227 ms
+2019-02-25 00:42:36.905  INFO 961 --- [main] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-02-25 00:42:36.907  INFO 961 --- [main] o.s.b.w.servlet.ServletRegistrationBean  : Servlet webServlet mapped to [/h2-console/*]
+2019-02-25 00:42:36.911  INFO 961 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-02-25 00:42:36.911  INFO 961 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-02-25 00:42:36.911  INFO 961 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'formContentFilter' to: [/*]
+2019-02-25 00:42:36.911  INFO 961 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-02-25 00:42:37.128  INFO 961 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-02-25 00:42:37.533  INFO 961 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8001 (http) with context path ''
+2019-02-25 00:42:37.537  INFO 961 --- [main] c.c.travel.travel.TravelApplication      : Started TravelApplication in 42.364 seconds (JVM running for 42.69)
+2019-02-25 00:45:28.272 ERROR 961 --- [http-nio-127.0.0.1-8001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : StandardWrapper.Throwable
+
+org.h2.message.DbException: IO Exception: "java.net.UnknownHostException: kubernetes-slave: kubernetes-slave: Name or service not known" [90028-197]
+	at org.h2.message.DbException.get(DbException.java:168) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.message.DbException.convert(DbException.java:299) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.util.NetUtils.getLocalAddress(NetUtils.java:254) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServer.updateURL(WebServer.java:331) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServer.init(WebServer.java:320) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServlet.init(WebServlet.java:52) ~[h2-1.4.197.jar:1.4.197]
+	at javax.servlet.GenericServlet.init(GenericServlet.java:158) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1124) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:777) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:133) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:770) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_191]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_191]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_191]
+Caused by: org.h2.jdbc.JdbcSQLException: IO Exception: "java.net.UnknownHostException: kubernetes-slave: kubernetes-slave: Name or service not known" [90028-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357) ~[h2-1.4.197.jar:1.4.197]
+	... 25 common frames omitted
+Caused by: java.net.UnknownHostException: kubernetes-slave: kubernetes-slave: Name or service not known
+	at java.net.InetAddress.getLocalHost(InetAddress.java:1506) ~[na:1.8.0_191]
+	at org.h2.util.NetUtils.getLocalAddress(NetUtils.java:252) ~[h2-1.4.197.jar:1.4.197]
+	... 22 common frames omitted
+Caused by: java.net.UnknownHostException: kubernetes-slave: Name or service not known
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method) ~[na:1.8.0_191]
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929) ~[na:1.8.0_191]
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1324) ~[na:1.8.0_191]
+	at java.net.InetAddress.getLocalHost(InetAddress.java:1501) ~[na:1.8.0_191]
+	... 23 common frames omitted
+
+2019-02-25 00:45:28.279 ERROR 961 --- [http-nio-127.0.0.1-8001-exec-1] o.a.c.c.C.[.[.[/].[webServlet]           : Allocate exception for servlet [webServlet]
+
+java.net.UnknownHostException: kubernetes-slave: Name or service not known
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method) ~[na:1.8.0_191]
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929) ~[na:1.8.0_191]
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1324) ~[na:1.8.0_191]
+	at java.net.InetAddress.getLocalHost(InetAddress.java:1501) ~[na:1.8.0_191]
+	at org.h2.util.NetUtils.getLocalAddress(NetUtils.java:252) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServer.updateURL(WebServer.java:331) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServer.init(WebServer.java:320) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.server.web.WebServlet.init(WebServlet.java:52) ~[h2-1.4.197.jar:1.4.197]
+	at javax.servlet.GenericServlet.init(GenericServlet.java:158) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1124) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:777) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:133) ~[tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:770) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_191]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_191]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.12.jar:9.0.12]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_191]
+
+2019-02-25 00:45:28.295  INFO 961 --- [http-nio-127.0.0.1-8001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-02-25 00:45:28.296  INFO 961 --- [http-nio-127.0.0.1-8001-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-02-25 00:45:28.304  INFO 961 --- [http-nio-127.0.0.1-8001-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2019-02-25 00:45:41.201  INFO 961 --- [Thread-3] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-02-25 00:52:59.214  INFO 6347 --- [main] c.c.travel.travel.TravelApplication      : Starting TravelApplication on localhost with PID 6347 (/home/thilan/dev-java/travel/api/build/classes/java/main started by thilan in /home/thilan/dev-java/travel/api)
+2019-02-25 00:52:59.256  INFO 6347 --- [main] c.c.travel.travel.TravelApplication      : No active profile set, falling back to default profiles: default
+2019-02-25 00:53:07.230  INFO 6347 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8001 (http)
+2019-02-25 00:53:07.473  INFO 6347 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-02-25 00:53:07.473  INFO 6347 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-02-25 00:53:07.531  INFO 6347 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+2019-02-25 00:53:08.008  INFO 6347 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-02-25 00:53:08.008  INFO 6347 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 8405 ms
+2019-02-25 00:53:08.137  INFO 6347 --- [main] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-02-25 00:53:08.139  INFO 6347 --- [main] o.s.b.w.servlet.ServletRegistrationBean  : Servlet webServlet mapped to [/h2-console/*]
+2019-02-25 00:53:08.140  INFO 6347 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-02-25 00:53:08.141  INFO 6347 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-02-25 00:53:08.141  INFO 6347 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'formContentFilter' to: [/*]
+2019-02-25 00:53:08.141  INFO 6347 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-02-25 00:53:08.613  INFO 6347 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-02-25 00:53:09.101  INFO 6347 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8001 (http) with context path ''
+2019-02-25 00:53:09.103  INFO 6347 --- [main] c.c.travel.travel.TravelApplication      : Started TravelApplication in 13.975 seconds (JVM running for 18.482)
